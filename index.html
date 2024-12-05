@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced To-Do App</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar">
+            <h1>📅 My To-Do Calendar</h1>
+            <div class="calendar-header">
+                <button id="prev-month">«</button>
+                <span id="month-year"></span>
+                <button id="next-month">»</button>
+            </div>
+            <div id="calendar" class="calendar"></div>
+        </aside>
+
+        <main class="main-content">
+            <header>
+                <h2 id="selected-date">Select a Date</h2>
+                <div class="header-buttons">
+                    <button id="change-date-btn" class="btn-secondary">Change Date</button>
+                    <button id="add-task-btn" class="btn-primary">+ Add Task</button>
+                </div>
+            </header>
+
+            <section id="tasks-section">
+                <div id="filter-buttons" class="filter-buttons">
+                    <button data-filter="all" class="filter-btn active">All</button>
+                    <button data-filter="work" class="filter-btn">Work</button>
+                    <button data-filter="personal" class="filter-btn">Personal</button>
+                </div>
+                <div id="task-list" class="task-list">
+                    <p class="no-tasks">No tasks available for this date.</p>
+                </div>
+            </section>
+        </main>
+
+        <div id="modal-overlay" class="modal-overlay">
+            <div class="modal">
+                <span class="close-modal">&times;</span>
+                <h3>Add a New Task</h3>
+                <form id="task-form">
+                    <input type="text" id="task-title" placeholder="Task Title" required>
+                    <textarea id="task-desc" placeholder="Task Description" required></textarea>
+                    <select id="task-category">
+                        <option value="work">Work</option>
+                        <option value="personal">Personal</option>
+                    </select>
+                    <button type="submit" class="btn-primary">Add Task</button>
+                </form>
+            </div>
+        </div>
+
+        <div id="date-modal-overlay" class="modal-overlay">
+            <div class="modal">
+                <span class="close-modal">&times;</span>
+                <h3>Select Date</h3>
+                <input type="date" id="date-picker">
+                <button id="select-date-btn" class="btn-primary">Select Date</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
